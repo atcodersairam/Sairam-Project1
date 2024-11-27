@@ -37,19 +37,20 @@ button_5 = st.button("Code Generation (Gemini)")
 # Handle button interactions
 if button_1:
     # Redirect to the external URL when the first button is clicked
-    st.markdown(
-        f'<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" target="_self">Redirecting...</a>',
-        unsafe_allow_html=True
-    )
+    st.write("Redirecting to the Code Execution and Testing page...")
+    st.experimental_rerun()  # This will refresh the app
     
+    # You can also open an external link in the browser using `st.markdown`
+    st.markdown('<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" target="_self">Click here if not redirected.</a>', unsafe_allow_html=True)
+
 if button_2:
     st.write("You clicked 'Code Optimization'. You can add functionality here.")
-    
+
 if button_3:
     st.write("You clicked 'Code Generation (T5)'. You can add functionality here.")
-    
+
 if button_4:
     st.write("You clicked 'Knowledge Integration'. You can add functionality here.")
-    
+
 if button_5:
     st.write("You clicked 'Code Generation (Gemini)'. You can add functionality here.")
