@@ -37,7 +37,7 @@ st.markdown("""
         .blue-btn {
             display: inline-block;
             background-color: #007BFF;
-            color: white; /* Make text color white */
+            color: #F1F1F1; /* Lighter white text for better contrast */
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;
@@ -47,7 +47,7 @@ st.markdown("""
             transition: background-color 0.3s;
         }
         .blue-btn:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Darker blue on hover */
         }
         .back-btn {
             position: fixed;
