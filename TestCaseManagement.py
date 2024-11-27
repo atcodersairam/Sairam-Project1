@@ -37,7 +37,7 @@ st.markdown("""
         .blue-btn {
             display: inline-block;
             background-color: #007BFF;
-            color: white;
+            color: white; /* Make text color white */
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;
