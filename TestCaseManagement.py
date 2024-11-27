@@ -37,6 +37,7 @@ st.markdown("""
     <style>
         body {
             background-color: #ADD8E6;
+            color: white;
         }
         .blue-btn {
             display: inline-block;
@@ -51,6 +52,28 @@ st.markdown("""
             transition: background-color 0.3s;
         }
         .blue-btn:hover {
+            background-color: #0056b3;
+        }
+        .footer-btns {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .footer-btn {
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .footer-btn:hover {
             background-color: #0056b3;
         }
     </style>
@@ -93,4 +116,12 @@ if st.button("Generate Test Cases"):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
     else:
-        st.warning("Please enter a Python code snippet before submitting.")
+        st.warning("Please enter a Python code snippet before submitting.") 
+
+# Footer with Back and Rank Codes buttons
+st.markdown("""
+    <div class="footer-btns">
+        <a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="footer-btn">Back</a>
+        <a href="https://rank-codes-sairam-project1.streamlit.app/" class="footer-btn">Rank Codes</a>
+    </div>
+""", unsafe_allow_html=True)
