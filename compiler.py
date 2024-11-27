@@ -37,7 +37,7 @@ st.markdown("""
         text-align: center;
         text-decoration: none;
         background-color: #FF0000; /* Red button color */
-        color: white; /* White text */
+        color: white !important; /* White text */
         font-size: 18px;
         font-weight: bold;
         border-radius: 10px;
