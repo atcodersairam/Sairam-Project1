@@ -1,9 +1,5 @@
-import os
-import time
 import streamlit as st
 import google.generativeai as genai
-import subprocess
-import sys
 
 GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"
 genai.configure(api_key=GOOGLE_API_KEY)
@@ -37,7 +33,6 @@ st.markdown("""
     <style>
         body {
             background-color: #ADD8E6;
-            color: white;
         }
         .blue-btn {
             display: inline-block;
@@ -54,27 +49,15 @@ st.markdown("""
         .blue-btn:hover {
             background-color: #0056b3;
         }
-        .footer-btns {
+        .back-btn {
             position: fixed;
+            left: 20px;
             bottom: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
         }
-        .footer-btn {
-            background-color: #007BFF;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-align: center;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .footer-btn:hover {
-            background-color: #0056b3;
+        .ranked-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -116,12 +99,14 @@ if st.button("Generate Test Cases"):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
     else:
-        st.warning("Please enter a Python code snippet before submitting.")  
+        st.warning("Please enter a Python code snippet before submitting.") 
 
-# Add footer buttons for "Back" and "Rank Codes"
-st.markdown("""
-    <div class="footer-btns">
-        <a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="footer-btn">Back</a>
-        <a href="https://rank-codes-sairam-project1.streamlit.app/" class="footer-btn">Rank Codes</a>
-    </div>
-""", unsafe_allow_html=True)
+# Add back and ranked code buttons with fixed positions
+st.markdown(
+    '<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="blue-btn back-btn" target="_blank">Back</a>',
+    unsafe_allow_html=True
+)
+st.markdown(
+    '<a href="https://rank-codes-sairam-project1.streamlit.app/" class="blue-btn ranked-btn" target="_blank">Ranked Code</a>',
+    unsafe_allow_html=True
+)
