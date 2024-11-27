@@ -23,20 +23,20 @@ st.markdown("""
         color: white;  /* White color for Output header */
     }
     .stButton > button {
-        background-color: #FF0000; /* Red color for Run Code button */
+        background-color: #1E90FF; /* Blue color for buttons */
         color: white;  /* White text on the button */
         font-size: 18px;
         border-radius: 10px;
         padding: 10px 20px;
     }
     .stButton > button:hover {
-        background-color: #e60000;  /* Darker red on hover */
+        background-color: #1565c0;  /* Darker blue on hover */
     }
     .redirect-button {
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        background-color: #FF0000; /* Red button color */
+        background-color: #1E90FF; /* Blue button color */
         color: white !important; /* White text */
         font-size: 18px;
         font-weight: bold;
@@ -45,7 +45,7 @@ st.markdown("""
         margin-top: 20px;
     }
     .redirect-button:hover {
-        background-color: #e60000;  /* Darker red on hover */
+        background-color: #1565c0;  /* Darker blue on hover */
     }
     body {
         color: white; /* Default white text for the body content */
