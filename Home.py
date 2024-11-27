@@ -1,9 +1,9 @@
 import streamlit as st
 
-# Hyperlink that triggers a redirect
+# Define the URL to redirect to
 url = "https://code-execution-modul-compiler-sairam-project1.streamlit.app/"
-st.markdown('[Code Execution and Testing](#)', unsafe_allow_html=True)
 
-# Redirect the user to the URL when they click the link
+# Create a clickable button
 if st.button('Code Execution and Testing'):
+    st.experimental_set_query_params(redirect=url)
     st.experimental_redirect(url)
