@@ -53,11 +53,13 @@ st.markdown("""
             position: fixed;
             left: 20px;
             bottom: 20px;
+            cursor: pointer;
         }
         .ranked-btn {
             position: fixed;
             right: 20px;
             bottom: 20px;
+            cursor: pointer;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -101,11 +103,11 @@ if st.button("Generate Test Cases"):
     else:
         st.warning("Please enter a Python code snippet before submitting.") 
 
-# Add back and ranked code buttons with fixed positions
-st.markdown(
-    '<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="blue-btn back-btn" target="_blank">Back</a>',
-    unsafe_allow_html=True
-)
+# Back button to reload the page
+if st.button("Back"):
+    st.experimental_rerun()
+
+# Add ranked code button with fixed position
 st.markdown(
     '<a href="https://rank-codes-sairam-project1.streamlit.app/" class="blue-btn ranked-btn" target="_blank">Ranked Code</a>',
     unsafe_allow_html=True
