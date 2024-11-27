@@ -36,8 +36,8 @@ st.markdown("""
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        background-color: #1E90FF; /* Light blue color */
-        color: white;
+        background-color: #FF0000; /* Red button color */
+        color: white; /* White text */
         font-size: 18px;
         font-weight: bold;
         border-radius: 10px;
@@ -45,7 +45,7 @@ st.markdown("""
         margin-top: 20px;
     }
     .redirect-button:hover {
-        background-color: #1565c0;  /* Darker blue on hover */
+        background-color: #e60000;  /* Darker red on hover */
     }
     </style>
 """, unsafe_allow_html=True)
