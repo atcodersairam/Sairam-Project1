@@ -32,6 +32,21 @@ st.markdown("""
     .stButton > button:hover {
         background-color: #e60000;  /* Darker red on hover */
     }
+    .redirect-button {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        background-color: #1E90FF; /* Light blue color */
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-top: 20px;
+    }
+    .redirect-button:hover {
+        background-color: #1565c0;  /* Darker blue on hover */
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -77,4 +92,10 @@ with col2:
                 st.error(f"An error occurred: {e}")
         else:
             # If no code was provided, prompt the user to enter some code (Constant time and space complexity O(1))
-            st.warning("Please enter some code to run.")
+            st.warning("Please enter some code to run.")  
+
+# Add a button for Test Case Management (Constant time and space complexity O(1))
+st.markdown(
+    '<a href="https://test-case-management-sairam-project1.streamlit.app/" class="redirect-button" target="_blank">Test Case Management</a>',
+    unsafe_allow_html=True
+)
