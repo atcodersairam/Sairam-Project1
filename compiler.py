@@ -1,10 +1,10 @@
 import streamlit as st
 import subprocess
 
-# Set page layout to wide mode (Constant time and space complexity O(1))
+# Set page layout to wide mode
 st.set_page_config(layout="wide")
 
-# Custom CSS for the colors you requested (Constant time and space complexity O(1))
+# Custom CSS for the colors and button styles
 st.markdown("""
     <style>
     .title {
@@ -50,13 +50,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Applying the custom styles to different sections (Constant time and space complexity O(1))
+# Applying the custom styles to different sections
 st.markdown('<p class="title">Python Code Compiler</p>', unsafe_allow_html=True)
 
-# Create two columns: one for the code input and one for the output (Constant time and space complexity O(1))
+# Create two columns: one for the code input and one for the output
 col1, col2 = st.columns(2)
 
-# Input field to accept Python code from the user (Linear complexity based on input size n)
+# Input field to accept Python code from the user
 with col1:
     st.markdown('<p class="editor-header">Code Editor</p>', unsafe_allow_html=True)
     code = st.text_area("Enter Python code here:", height=300)
@@ -68,7 +68,7 @@ with col2:
     if st.button("Run Code"):
         if code:
             try:
-                # Save the user input code to a temporary file (Time complexity O(n), Space complexity O(n))
+                # Save the user input code to a temporary file
                 with open("temp_code.py", "w") as file:
                     file.write(code)
                 
@@ -79,23 +79,25 @@ with col2:
                 
                 # Display output or errors in Streamlit
                 if result.returncode == 0:
-                    # If the code runs successfully, display the output (Time and space complexity O(m), where m is output size)
+                    # If the code runs successfully, display the output
                     st.success("Code ran successfully!")
                     st.text("Output:\n" + result.stdout)
                 else:
-                    # If the code fails, display the error message (Time and space complexity O(m))
+                    # If the code fails, display the error message
                     st.error("Code failed with the following error:")
                     st.text(result.stderr)
             
             except Exception as e:
-                # Handle any unexpected errors (Constant time and space complexity O(1))
+                # Handle any unexpected errors
                 st.error(f"An error occurred: {e}")
         else:
-            # If no code was provided, prompt the user to enter some code (Constant time and space complexity O(1))
+            # If no code was provided, prompt the user to enter some code
             st.warning("Please enter some code to run.")  
 
-# Add a button for Test Case Management (Constant time and space complexity O(1))
+# Add a button for Test Case Management using HTML
 st.markdown(
-    '<a href="https://test-case-management-sairam-project1.streamlit.app/" class="redirect-button" target="_blank">Test Case Management</a>',
+    """
+    <a href="https://test-case-management-sairam-project1.streamlit.app/" class="redirect-button" target="_blank">Test Case Management</a>
+    """,
     unsafe_allow_html=True
 )
