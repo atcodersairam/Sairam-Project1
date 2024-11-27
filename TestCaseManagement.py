@@ -116,9 +116,9 @@ if st.button("Generate Test Cases"):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
     else:
-        st.warning("Please enter a Python code snippet before submitting.") 
+        st.warning("Please enter a Python code snippet before submitting.")  
 
-# Footer with Back and Rank Codes buttons
+# Add footer buttons for "Back" and "Rank Codes"
 st.markdown("""
     <div class="footer-btns">
         <a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="footer-btn">Back</a>
