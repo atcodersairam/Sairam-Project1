@@ -3,8 +3,8 @@ import requests
 import re
 import math  # For IDF calculation
 
-# GitHub Token (Hardcoded)
-GITHUB_TOKEN = "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"
+# Hardcoded GitHub Token (Use with caution)
+GITHUB_TOKEN = "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"
 
 def fetch_file_content(file_url, headers=None):
     """Fetches the content of a file from GitHub(URL)."""
@@ -135,7 +135,7 @@ def main():
                     
                     functions = extract_function_names(file_content)
                     if functions:
-                        st.subheader("Functions:")
+                        st.subheader("Functions:") 
                         st.write(", ".join(functions))
                 else:
                     st.error("Could not fetch the file content.")
@@ -162,4 +162,4 @@ def main():
             st.warning("Enter a search term.")
 
 if __name__ == "__main__":
-    main()   
+    main()
