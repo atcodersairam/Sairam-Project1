@@ -103,7 +103,7 @@ if st.button("Generate Test Cases"):
 
 # Add back and ranked code buttons with fixed positions
 st.markdown(
-    '<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="blue-btn back-btn" target="_blank">Back</a>',
+    '<a href="https://code-execution-modul-compiler-sairam-project1.streamlit.app/" class="blue-btn back-btn" target="_blank">Compiler</a>',
     unsafe_allow_html=True
 )
 st.markdown(
