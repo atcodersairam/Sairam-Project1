@@ -10,21 +10,21 @@ st.markdown("""
     .title {
         font-size: 48px;
         font-weight: bold;
-        color: #800080;  /* Normal purple color */
+        color: white;  /* White color for title */
     }
     .editor-header {
         font-size: 24px;
         font-weight: bold;
-        color: #1E90FF;  /* Light blue color */
+        color: white;  /* White color for Code Editor header */
     }
     .output-header {
         font-size: 24px;
         font-weight: bold;
-        color: #B76E79;  /* Rose gold color */
+        color: white;  /* White color for Output header */
     }
     .stButton > button {
         background-color: #FF0000; /* Red color for Run Code button */
-        color: white;
+        color: white;  /* White text on the button */
         font-size: 18px;
         border-radius: 10px;
         padding: 10px 20px;
@@ -46,6 +46,9 @@ st.markdown("""
     }
     .redirect-button:hover {
         background-color: #e60000;  /* Darker red on hover */
+    }
+    body {
+        color: white; /* Default white text for the body content */
     }
     </style>
 """, unsafe_allow_html=True)
