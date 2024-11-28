@@ -21,6 +21,11 @@ st.markdown(
     "[**Code Generation With Gemini**](https://code-gen-gemini-sairam-project1.streamlit.app/)"
 )
 
+# Add the URL for "Know Knowledge Extractor"
+st.markdown(
+    "[**Know Knowledge Extractor**](http://localhost:8501/)"
+)
+
 # Footer
 st.write("---")
 st.write("Created by Sairam - Project 1")
