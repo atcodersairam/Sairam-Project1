@@ -65,8 +65,7 @@ if st.button("Generate"):
             try:
                 # Prompt for Google Generative AI
                 prompt = (
-                    f"Optimized Code For this , Execution Time \n "
-                    f"Make sure to include explanations for the changes made, highlight any potential issues as comments in the code, and provide test cases.\n"
+                    f"Exection Time,Time Complexity,Bug Present"
                     f"Buggy Code:\n{extra_details}\n\n"
                     f"Fixed Code:\n which can be copied with clipboadrd button near the code "
                 )
