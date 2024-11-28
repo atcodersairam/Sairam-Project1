@@ -13,7 +13,7 @@ st.markdown(
 
 # Add another hyperlink that redirects to the local host (port 8501)
 st.markdown(
-    "[**Knowledge Extractor)**](http://localhost:8501)"
+    "[**Knowledge Extractor**](http://localhost:8501)"
 )
 
 # Footer
