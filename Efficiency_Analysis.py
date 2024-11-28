@@ -8,8 +8,10 @@ from io import StringIO
 import contextlib
 import ast
 
+# Hardcoded Google API Key
+GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Replace this with your actual API key
+
 # Configure Google Generative AI with the provided API key
-GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Insert your actual API key here
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Use the "models/gemini-1.5-flash" model
@@ -19,7 +21,7 @@ chat = model.start_chat(history=[])
 
 # Streamlit UI
 st.title("Enhanced Code Efficiency Analysis and Bug Detection")
-st.write("Solve the Bugs in Your Code.")
+st.write("Fix Bugs and Optimize Your Code.")
 
 # Input for extra details using a longer text area for additional context or instructions
 extra_details = st.text_area("Enter Code with Bugs", height=200)
