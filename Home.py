@@ -23,7 +23,7 @@ st.markdown(
 
 # Add the URL for "Know Knowledge Extractor"
 st.markdown(
-    "[**Know Knowledge Extractor**](http://localhost:8501/)"
+    "[**Knowledge Extractor**](http://localhost:8501/)"
 )
 
 # Footer
