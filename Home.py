@@ -9,17 +9,14 @@ st.title("Welcome to Code Execution and Testing")
 st.markdown(
     """
     This application allows you to test and execute code in a user-friendly environment.
-    
+    \n\n
     Click the link below to access the module:
     """
 )
 
-# Add the hyperlink
+# Add the hyperlink correctly using markdown
 st.markdown(
-    """
-    [**Code Execution and Testing**](https://code-execution-modul-compiler-sairam-project1.streamlit.app/)
-    """,
-    unsafe_allow_html=True
+    "[**Code Execution and Testing**](https://code-execution-modul-compiler-sairam-project1.streamlit.app/)"
 )
 
 # Footer
