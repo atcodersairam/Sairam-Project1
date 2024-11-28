@@ -102,9 +102,11 @@ if st.button("Generate"):
             try:
                 # AI prompt for fixing the buggy code
                 prompt = (
-                    f"Improve the following code for readability, performance, and bug fixes:\n"
-                    f"Buggy Code:\n{extra_details}\n\n"
-                    f"Provide the corrected and optimized code along with explanations."
+                    f"Efficiency Analysis"
+                    f"Fixed Code In SeparateBlock with Best Readable Format"
+                    f"Corrected COde"
+                    f"Algortihimc Efficiency"
+                    f"Bug Detection"
                 )
                 
                 # Generate response from AI
