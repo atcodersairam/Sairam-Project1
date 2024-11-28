@@ -21,6 +21,7 @@ st.markdown(
 
 st.markdown(
     "[**Code Generation With Gemini**](https://code-gen-gemini-sairam-project1.streamlit.app/)"
+)
 # Footer
 st.write("---")
 st.write("Created by Sairam - Project 1")
