@@ -62,7 +62,7 @@ if st.button("Generate"):
         with st.spinner("Removing Bugs and Enhancing the Code..."):
             try:
                 prompt = (
-                    f"Generate a corrected version of the provided Python code with enhanced readability,its efficiency analysis, better performance, and clear bug fixes. "
+                    f"Generate a corrected version of the provided Python code with enhanced readability,its efficiency analysis(Execution Time , better performance, and clear bug fixes. "
                     f"Make sure to include explanations for the changes made, highlight any potential issues as comments in the code, and provide test cases.\n"
                     f"Buggy Code:  fixed Code \n{extra_details}"
                 )
