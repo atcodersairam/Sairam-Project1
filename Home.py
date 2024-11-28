@@ -17,12 +17,10 @@ st.markdown(
 )
 
 # Add a button for Code Generation with Gemini that redirects to the specified URL
-if st.button("Code Generation with Gemini"):
-    st.markdown(
-        '[**Redirecting to Code Generation with Gemini**](https://code-gen-gemini-sairam-project1.streamlit.app/)', 
-        unsafe_allow_html=True
-    )
 
+
+st.markdown(
+    "[**Code Generation With Gemini**](https://code-gen-gemini-sairam-project1.streamlit.app/)"
 # Footer
 st.write("---")
 st.write("Created by Sairam - Project 1")
