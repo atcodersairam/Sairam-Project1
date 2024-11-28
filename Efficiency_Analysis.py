@@ -68,7 +68,7 @@ if st.button("Generate"):
                     f"Optimized Code For this , Execution Time \n "
                     f"Make sure to include explanations for the changes made, highlight any potential issues as comments in the code, and provide test cases.\n"
                     f"Buggy Code:\n{extra_details}\n\n"
-                    f"Fixed Code:\n"
+                    f"Fixed Code:\n which can be copied with clipboadrd button near the code "
                 )
 
                 # Sending the prompt to the Generative AI model
