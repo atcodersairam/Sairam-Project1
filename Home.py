@@ -1,14 +1,19 @@
 import streamlit as st
 
 # Set the page title
-st.set_page_config(page_title="Home Page - Code Execution and Testing", layout="centered")
+st.set_page_config(page_title="Home Page - Knowledgeable Extractor", layout="centered")
 
 # Page content
-st.title("Ti-Coder Project")
+st.title("Knowledgeable Extractor")
 
-# Add the hyperlink correctly using markdown
+# Add the first hyperlink (external URL)
 st.markdown(
     "[**Code Execution and Testing**](https://code-execution-modul-compiler-sairam-project1.streamlit.app/)"
+)
+
+# Add another hyperlink that redirects to the local host (port 8501)
+st.markdown(
+    "[**Local Streamlit App (Port 8501)**](http://localhost:8501)"
 )
 
 # Footer
