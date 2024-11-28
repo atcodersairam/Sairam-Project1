@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Home Page - Knowledgeable Extractor", layout="centered")
 
 # Page content
-st.title("Knowledgeable Extractor")
+st.title("Home")
 
 # Add the first hyperlink (external URL)
 st.markdown(
