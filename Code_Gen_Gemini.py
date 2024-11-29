@@ -1,5 +1,4 @@
 import os
-import re
 import streamlit as st
 import google.generativeai as genai
 
@@ -14,19 +13,20 @@ a[href*="github.com"] {display: none;}
 st.markdown(hide_menu_and_footer, unsafe_allow_html=True)
 
 # Configure Google Generative AI with the provided API key
-GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Your provided API key
-genai.configure(api_key=GOOGLE_API_KEY)
+GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Replace with your actual API key
+try:
+    genai.configure(api_key=GOOGLE_API_KEY)
+except Exception as e:
+    st.error(f"Failed to configure Google Generative AI: {e}")
+    st.stop()
 
-# List available models and find the appropriate one (e.g., version 1.5)
+# Fetch available models that support "generateContent"
 available_models = []
 try:
     for m in genai.list_models():
-        if 'generateContent' in m.supported_generation_methods:
-            # Look for models with version 1.5 in the model name or metadata
-            if '1.5' in m.name:
-                available_models.append(m.name)
+        if "generateContent" in m.supported_generation_methods and "1.5" in m.name:
+            available_models.append(m.name)
 
-    # Check if we have available models
     if not available_models:
         st.error("No suitable models found that support content generation with version 1.5.")
         st.stop()
@@ -34,55 +34,66 @@ except Exception as e:
     st.error(f"Error fetching models: {e}")
     st.stop()
 
-# Use the first available model (ensure it's version 1.5)
+# Use the first available model
 model_name = available_models[0]
-model = genai.GenerativeModel(model_name)
-chat = model.start_chat(history=[])
+try:
+    model = genai.GenerativeModel(model_name)
+    chat = model.start_chat(history=[])
+except Exception as e:
+    st.error(f"Failed to initialize chat with model '{model_name}': {e}")
+    st.stop()
 
 # Streamlit UI
-st.title("LLM-Based-CODE-ASSIST")
-st.write("Code-Generator")
+st.title("💻 LLM-Based Code Assistant")
+st.write("Generate Python code snippets with varying complexity, complete with explanations and complexity analysis.")
 
-# Input for user prompt using a text input box
-user_prompt = st.text_input("Request-Drop Box:")
+# Input for user prompt
+user_prompt = st.text_input("Enter your code request:", placeholder="e.g., Generate Python code for sorting algorithms.")
 
-# Input for extra details using a longer text area for additional context or instructions
-extra_details = st.text_area("Test-Cases-Constraints-Extra-Details:", height=200)
+# Text area for extra details
+extra_details = st.text_area(
+    "Additional Details (e.g., constraints, test cases):",
+    placeholder="Provide more context if needed (optional).",
+    height=200,
+)
 
 # Submit button to get response
 if st.button("Generate"):
     if user_prompt:
-        if user_prompt.lower() == "exit":
-            st.write("Session ended.")
-        else:
-            # Show a loading spinner while fetching the response
-            with st.spinner("Loading..."):
-                try:
-                    # Combine the user prompt and additional details
-                    prompt = (
-                        f"Generate 3 Python codes with different complexity in time and space,  comments,in seperate box with copy button for each code "
-                        f"in readable colored lines, hardcoded input, readily executable code with time complexity "
-                        f"of each code:\n"
-                        f"{user_prompt}\n{extra_details}"
-                    )
-                    response = chat.send_message(prompt, stream=True)
+        # Show a loading spinner while fetching the response
+        with st.spinner("Generating code, please wait..."):
+            try:
+                # Construct the prompt
+                prompt = (
+                    f"Generate 3 Python codes with different levels of complexity (basic, intermediate, and advanced) "
+                    f"for the following request. Include comments in the code and display time and space complexity. "
+                    f"Provide the code in separate boxes with a 'Copy' button for each snippet:\n\n"
+                    f"Request: {user_prompt}\n\n"
+                    f"Additional Details: {extra_details}"
+                )
 
-                    output = ""
-                    for chunk in response:
-                        if chunk.text:
-                            output += chunk.text
+                # Send the request to the model
+                response = chat.send_message(prompt, stream=True)
+                output = ""
 
-                    # Display the output as plain text without code block markers
-                    st.markdown(output)  # Display the output in markdown format
+                for chunk in response:
+                    if chunk.text:
+                        output += chunk.text
 
-                except Exception as e:
-                    # Handle specific errors related to the model's response
-                    if "Invalid operation" in str(e):
-                        st.error("The response did not contain valid text. Please try rephrasing your question.")
-                    elif "unexpected model name format" in str(e):
-                        st.error("The selected model name is not recognized. Please check the available models.")
-                    else:
-                        st.error(f"An unexpected error occurred: {e}")
+                # Split the response into individual code blocks and display them with a "Copy" button
+                st.markdown("### Generated Code Snippets:")
+                code_blocks = output.split("```")
+                for i, block in enumerate(code_blocks):
+                    if block.strip():
+                        st.code(block.strip(), language="python")
+                        st.button("Copy Code", key=f"copy_button_{i}")
+
+            except Exception as e:
+                # Handle errors during generation
+                st.error(f"An error occurred while generating code: {e}")
     else:
-        st.warning("Please enter a request before submitting.")
+        st.warning("Please enter a code request before clicking 'Generate'.")
+
+# Footer
+st.markdown("<br><hr><small>Powered by Google Generative AI</small>", unsafe_allow_html=True)
 
