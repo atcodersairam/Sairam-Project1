@@ -3,15 +3,15 @@ import re
 import streamlit as st
 import google.generativeai as genai
 
-# Hide GitHub and other Streamlit elements
-hide_streamlit_style = """
+# Hide Streamlit menu bar, footer, and GitHub links
+hide_menu_and_footer = """
 <style>
-a[href*="github.com"] {
-    display: none;
-}
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+a[href*="github.com"] {display: none;}
 </style>
 """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+st.markdown(hide_menu_and_footer, unsafe_allow_html=True)
 
 # Configure Google Generative AI with the provided API key
 GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Your provided API key
@@ -85,3 +85,4 @@ if st.button("Generate"):
                         st.error(f"An unexpected error occurred: {e}")
     else:
         st.warning("Please enter a request before submitting.")
+
