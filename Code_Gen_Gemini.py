@@ -3,6 +3,16 @@ import re
 import streamlit as st
 import google.generativeai as genai
 
+# Hide GitHub and other Streamlit elements
+hide_streamlit_style = """
+<style>
+a[href*="github.com"] {
+    display: none;
+}
+</style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # Configure Google Generative AI with the provided API key
 GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"  # Your provided API key
 genai.configure(api_key=GOOGLE_API_KEY)
