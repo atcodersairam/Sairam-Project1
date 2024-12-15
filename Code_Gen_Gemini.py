@@ -18,7 +18,7 @@ def generate_code_prompt(user_input):
     # This function will format the user input to make it clear we're asking for code
     prompt = f"""
     You are a powerful AI that helps generate Python code based on user ideas. 
-
+    3 Best Code With Best READABILITY 
     The user has a project idea and needs Python code for it. 
     Please generate Python code that solves the following problem:
 
