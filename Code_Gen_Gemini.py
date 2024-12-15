@@ -23,9 +23,6 @@ def generate_code_prompt(user_input):
 
     The generated code should be clean, efficient, and well-commented, following best coding practices.
 
-    Please include all necessary imports, code structure, and comments for clarity.
-
-    If there are multiple ways to solve this problem, suggest one efficient approach with an explanation.
     """
     return prompt
 
