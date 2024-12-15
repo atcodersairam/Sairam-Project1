@@ -3,7 +3,7 @@ import google.generativeai as genai
 import time
 
 # Hardcoded API key (not recommended for production)
-GOOGLE_API_KEY = "AIzaSyBFSoD0iT4n8CmEov8vUvJlJro5kiPZLW4"
+GOOGLE_API_KEY = "AIzaSyDbufXAwGsoQ6WrR0YcW3F7rlGVOgd-igE"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # Streamlit UI Setup
