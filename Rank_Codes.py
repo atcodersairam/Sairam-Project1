@@ -6,7 +6,7 @@ import traceback
 import subprocess
 import sys
 
-GOOGLE_API_KEY = "AIzaSyBm6NVne2mZpyc6abAACbKWnAcmlZ_FWbY"
+GOOGLE_API_KEY = "AIzaSyAWcupp9ne56J5_hMoSmw8gRUvfPIwl0RQ"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 available_models = []
