@@ -9,7 +9,7 @@ import contextlib
 import ast
 
 # Constants
-GOOGLE_API_KEY = "AIzaSyBFSoD0iT4n8CmEov8vUvJlJro5kiPZLW4"  # Replace this with your actual API key
+GOOGLE_API_KEY = "AIzaSyDbufXAwGsoQ6WrR0YcW3F7rlGVOgd-igE"  # Replace this with your actual API key
 MODEL_NAME = "models/gemini-1.5-flash"
 
 # Configure Google Generative AI
